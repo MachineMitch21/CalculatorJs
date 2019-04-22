@@ -1,25 +1,54 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CalculatorContainer from './Main/CalculatorContainer';
+import opResolver from './Main/Operations/OperationResolver';
+import './App.scss';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      input: '',
+      result: '0'
+    }
+  }
+
+  onCalculatorButtonClicked = (event) => {
+    if (event.target.innerText === 'C') {
+      opResolver.flushInput();
+      this.setState({
+        input: '',
+        result: ''
+      });
+    } else if (event.target.innerText === '=') {
+      let result = opResolver.getResult();
+      opResolver.flushInput();
+      this.setState({
+        input: '',
+        result: result
+      });
+    } else {
+      if (opResolver.isOperator(event.target.innerText) && this.state.input === '') {
+        opResolver.addInput(this.state.result);
+        this.setState({
+          result: 0
+        })
+      }
+      opResolver.addInput(event.target.innerText);
+      this.setState({
+        input: `${opResolver.getInput().join(' ')}`,
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <CalculatorContainer 
+          input={this.state.input}
+          result={this.state.result}
+          onCalculatorButtonClicked={this.onCalculatorButtonClicked}
+        />
       </div>
     );
   }

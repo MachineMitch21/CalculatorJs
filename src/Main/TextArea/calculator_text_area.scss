@@ -1,0 +1,22 @@
+
+.calculator-text-area {
+	text-align: right;
+	flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+	font-size: 2em;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// justify-content: end;
+	// align-items: center;
+	padding-right: 1em;
+}
+
+.calculator-input {
+	flex: 1 1 100%;
+}
+
+.calculator-output {
+	flex: 1 1 100%;
+}

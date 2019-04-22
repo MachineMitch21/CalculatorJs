@@ -1,0 +1,21 @@
+
+@import './calculator_colors.scss';
+
+.calculator-container {
+	width: 100%;
+	background-color: map-get($theme, white);
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100%;
+}
+
+.calculator-row {
+	flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

@@ -1,0 +1,29 @@
+@import '../calculator_colors.scss';
+
+.calculator-button {
+	flex: 0 0 auto;
+	background-color: map-get($theme, primary);
+	padding: .001em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+
+	box-shadow: inset 0 0 2px .1px map-get($theme, dark);
+}
+
+.calculator-button:hover {
+	background-color: map-get($theme, dark);
+	cursor: pointer;
+}
+
+.calculator-button:active {
+	background-color: map-get($theme, accent-dark);
+}
+
+.calculator-button-text {
+	text-align: center;
+	font-size: 1.75em;
+	text-decoration: none;
+}
