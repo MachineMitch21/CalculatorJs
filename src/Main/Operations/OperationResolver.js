@@ -136,48 +136,6 @@ const OperationResolver = function() {
 			result = evalOpArray(evalOpTree);
 		}
 
-
-		// // look for multiply and divide operations
-		// // which are packed into arrays within evalOpTree
-		// for (let i = 0; i < evalOpTree; i++) {
-		// 	if (Array.isArray(evalOpTree[i])) {
-		// 		let opArr = evalOpTree[i];
-		// 		let operation = opArr[1];
-		// 		let nums = [opArr[0], opArr[2]];
-		// 		let opInst = new operation(...nums);
-		// 		evalOpTree[i] = opInst.perform();
-		// 	}
-		// }
-
-		// for (let i = 0; i < evalOpTree.length; i++)
-
-		// for (let i = 0; i < _opTree.length; i++) {
-		// 	if (that.isOperation(_opTree[i])) {
-		// 		let nums = [];
-
-		// 		let arg2 = _opTree[i + 1];
-
-		// 		if (arg2 === undefined) {
-		// 			break;
-		// 		} else {
-		// 			arg2 = parseInt(arg2);
-		// 		}
-				
-		// 		if (i >= 3) {
-		// 			nums.push(result, arg2);
-		// 		} else if (i === 1) {
-		// 			nums.push(parseInt(_opTree[i - 1]), arg2);
-		// 		} else if (i === 0) {
-		// 			nums.push(0, arg2);
-		// 		} 
-
-		// 		let operation = getOperationFromOperatorType(_opTree[i]);
-		// 		let opInst = new operation(...nums);
-		// 		result = opInst.perform();
-		// 		nums.length = 0;
-		// 	}
-		// }
-
 		return result;
 	}
 
